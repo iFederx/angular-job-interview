@@ -1,27 +1,31 @@
-# JobInterviewEx1
+# Angular job interview
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+## Esercizio 1
 
-## Development server
+### 1.1
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Realizza un componente che sia in grado di disegnare una lista di persone (hint: realizza anche un componente per disegnare una sola persona). Ogni persona è rappresentata da rettangolo come nell'immagine seguente.
 
-## Code scaffolding
+![lista di persone](image-1.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```typescript
+const people = [
+  { name: 'Mario', surname: 'Rossi' },
+  { name: 'Giuseppe', surname: 'Neri' },
+  { name: 'Luca', surname: 'Marrone' },
+  { name: 'Laura', surname: 'Bianchi' }
+];
+```
 
-## Build
+### 1.2
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Il componente deve essere in grado di ricevere in input un array di persone. Se l'array passato è vuoto, il componente deve mostrare un messaggio che avvisi che la lista è vuota.
 
-## Running unit tests
+### 1.3
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Aggiungi in fondo alla lista un form che accetti nome e cognome di una persona e un bottone **Aggiungi** per aggiungere la persona alla lista.
+Il nome e il cognome della persona devono essere validati: non devono essere vuoti e devono contenere almeno 3 caratteri. Se il form non è valido, il bottone **Aggiungi** deve essere disabilitato.
 
-## Running end-to-end tests
+### 1.4
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Aggiungi, per ogni persona, un bottone **Elimina** che permetta di eliminare la persona dalla lista.
