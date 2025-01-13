@@ -17,11 +17,10 @@ export interface Person {
 // #region Classes (1)
 
 @Component( {
-  selector: 'app-root',
-  standalone: true,
-  imports: [ RouterOutlet ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    selector: 'app-root',
+    imports: [RouterOutlet],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 } )
 export class AppComponent {
   // #region Properties (2)
