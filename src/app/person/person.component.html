@@ -1,5 +1,4 @@
-<div class="person-box">
-    ciao
-    {{person?.name}} {{person?.surname}}
-    <button (click)="deletePerson()">ELIMINA</button>
+<div class="person-box" *ngIf="person">
+  {{person.name}} {{person.surname}}
+  <button (click)="deletePerson()">ELIMINA</button>
 </div>
