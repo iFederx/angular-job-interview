@@ -19,7 +19,7 @@ const people = [
 
 ### 1.2
 
-Il componente deve essere in grado di ricevere in input un array di persone. Se l'array passato è vuoto, il componente deve mostrare un messaggio che avvisi che la lista è vuota.
+Il componente deve essere in grado di ricevere in input un array di persone (definisci un tipo per l'array `Person[]`). Se l'array passato è vuoto, il componente deve mostrare un messaggio che avvisi che la lista è vuota.
 
 ### 1.3
 
@@ -28,4 +28,4 @@ Il nome e il cognome della persona devono essere validati: non devono essere vuo
 
 ### 1.4
 
-Aggiungi, per ogni persona, un bottone **Elimina** che permetta di eliminare la persona dalla lista.
+Aggiungi, nel componente Persona, un bottone **Elimina** che permetta di eliminare la persona dalla lista. Il componente dovrà emettere un evento di tipo `EventEmitter` che notifichi al componente padre la volontà di eliminare la persona. Il componente padre dovrà rimuovere la persona dalla lista.
