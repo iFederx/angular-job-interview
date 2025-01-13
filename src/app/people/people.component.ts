@@ -1,9 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Person } from '../app.component';
-import { CommonModule } from '@angular/common';
 import { PersonComponent } from '../person/person.component';
 
-@Component({
+@Component( {
   selector: 'app-people',
   standalone: true,
   imports: [
@@ -12,11 +12,19 @@ import { PersonComponent } from '../person/person.component';
   ],
   templateUrl: './people.component.html',
   styleUrl: './people.component.scss'
-})
+} )
 export class PeopleComponent {
-  @Input() people: Person[] = [];
+  // #region Properties (1)
 
-  public deletePerson(index: number) {
-    this.people.splice(index, 1);
+  @Input() public people!: Person[];
+
+  // #endregion Properties (1)
+
+  // #region Public Methods (1)
+
+  public deletePerson( index: number ) {
+    this.people.splice( index, 1 );
   }
+
+  // #endregion Public Methods (1)
 }
