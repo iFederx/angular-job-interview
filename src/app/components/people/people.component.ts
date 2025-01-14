@@ -17,5 +17,12 @@ export class PeopleComponent {
 
   @Input() public people!: Person[];
 
+  public deletePerson(id: string) {
+    const indexToDelete = this.people.findIndex(p => p.id === id);
+    if (indexToDelete > -1) {
+      this.people.splice(indexToDelete, 1);
+    }
+  }
+
   // #endregion Properties (1)
 }
