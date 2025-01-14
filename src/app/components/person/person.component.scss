@@ -1,0 +1,11 @@
+.person-container {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    height: 64px;
+    width: 100%;
+    background: red;
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}

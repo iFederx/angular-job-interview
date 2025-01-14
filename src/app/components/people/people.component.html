@@ -1,3 +1,1 @@
-<ng-container *ngFor="let person of people">
-  {{person.name}} {{person.surname}}
-</ng-container>
+<app-person *ngFor="let person of people" [person]="person"></app-person>
