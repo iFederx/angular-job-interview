@@ -1,1 +1,5 @@
 <app-person *ngFor="let person of people" [person]="person"></app-person>
+
+<div *ngIf="people.length === 0">
+  Non sono presenti persone nell'array passato
+</div>
