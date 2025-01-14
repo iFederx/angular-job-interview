@@ -3,6 +3,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterOutlet } from '@angular/router';
 import { PeopleComponent } from './components/people/people.component';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { UniqueSelectionDispatcher } from '@angular/cdk/collections';
 
 // #region Interfaces (1)
 
@@ -26,7 +28,9 @@ export interface Person {
     RouterOutlet,
     MatButtonModule,
     MatIconModule,
-    PeopleComponent
+    PeopleComponent,
+    FormsModule,
+    ReactiveFormsModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -44,6 +48,24 @@ export class AppComponent {
     { name: 'Laura', surname: 'Bianchi', id: '7' }
   ]
   public title = 'job-interview-ex1';
+  public newPersonForm: FormGroup = new FormGroup({
+    name: new FormControl<string>('', Validators.required),
+    surname: new FormControl<string>('', Validators.required),
+  })
+
+  public addPerson() {
+    const newPerson: Person = {
+      name: this.newPersonForm.controls['name'].value,
+      surname: this.newPersonForm.controls['surname'].value,
+      id: this.newPersonForm.controls['name'].value+this.newPersonForm.controls['surname'].value
+    };
+    this.people.push(newPerson);
+    this.newPersonForm.reset();
+  }
+
+  private getNewId() {
+
+  }
 
   // #endregion Properties (2)
 }

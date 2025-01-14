@@ -1,2 +1,7 @@
 <h1>Angular job interview</h1>
-<app-people [people]="[]"></app-people>
+<app-people [people]="people"></app-people>
+<form [formGroup]="newPersonForm">
+    <input type="text" placeholder="nome" [formControlName]="'name'">
+    <input type="text" placeholder="cognome" [formControlName]="'surname'">
+    <button [disabled]="!newPersonForm.valid" (click)="addPerson()">Inserisci</button>
+</form>
