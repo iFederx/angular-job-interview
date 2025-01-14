@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterOutlet } from '@angular/router';
+import { PeopleComponent } from './components/people/people.component';
 
 // #region Interfaces (1)
 
@@ -24,7 +25,8 @@ export interface Person {
   imports: [
     RouterOutlet,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    PeopleComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
