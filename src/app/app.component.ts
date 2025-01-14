@@ -5,6 +5,8 @@ import { RouterOutlet } from '@angular/router';
 import { PeopleComponent } from './components/people/people.component';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UniqueSelectionDispatcher } from '@angular/cdk/collections';
+import { HttpClient, HttpClientModule, provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
+import { take, tap } from 'rxjs';
 
 // #region Interfaces (1)
 
@@ -36,6 +38,9 @@ export interface Person {
   styleUrl: './app.component.scss'
 } )
 export class AppComponent {
+  constructor(
+    private http: HttpClient
+  ) {}
   // #region Properties (2)
 
   public people: Person[] = [
@@ -63,8 +68,26 @@ export class AppComponent {
     this.newPersonForm.reset();
   }
 
-  private getNewId() {
+  public getNewUsers() {
+    const url = 'https://jsonplaceholder.typicode.com/users';
+    this.http.get(url)
+      .pipe(
+        take(1),
+        tap(resp => {
+          if (Array.isArray(resp)) {
+            for (const user of resp) {
+              const newUser: Person = {
+                name: user?.name,
+                surname: user?.name,
+                id: user?.name
+              }
 
+              this.people.push(newUser);
+            }
+          }
+        })
+      )
+      .subscribe();
   }
 
   // #endregion Properties (2)

@@ -5,3 +5,6 @@
     <input type="text" placeholder="cognome" [formControlName]="'surname'">
     <button [disabled]="!newPersonForm.valid" (click)="addPerson()">Inserisci</button>
 </form>
+<button (click)="getNewUsers()">
+    Fetch
+</button>
