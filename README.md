@@ -4,7 +4,7 @@
 
 ### 1.1
 
-Realizza un componente che sia in grado di disegnare una lista di persone (hint: realizza anche un componente per disegnare una sola persona). Ogni persona è rappresentata da rettangolo come nell'immagine seguente.
+Realizza un componente che sia in grado di disegnare una lista di persone (*hint*: realizza anche un componente per disegnare una sola persona). Ogni persona è rappresentata da rettangolo come nell'immagine seguente.
 
 ![lista di persone](image-1.png)
 
